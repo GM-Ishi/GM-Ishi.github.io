@@ -1,6 +1,9 @@
 /*Styles for home page*/
 *{
     box-sizing: border-box;
+}
+
+body{
     background-color:blueviolet;
 }
 
