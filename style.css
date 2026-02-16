@@ -30,3 +30,12 @@ header h1{
     flex-grow: 1;/*fills space*/
     text-align: center;/*horizontal align*/
 }
+
+section{
+    background-color:bisque;
+}
+
+#coolPic img{
+    width: 100%;
+    height: auto;
+}
