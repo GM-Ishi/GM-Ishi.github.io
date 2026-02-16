@@ -4,7 +4,7 @@
 }
 
 body{
-    background-color:blueviolet;
+    background-color: blueviolet;
 }
 
 h1,h1{
@@ -12,11 +12,21 @@ h1,h1{
 }
 
 header,section{
-    background-color:aqua;
+    background-color: aqua;
     height:90vh;
     width:60vh;
     float: left;
     margin: 1rem;
     padding: 3rem;
     box-shadow: 0px 5px 10px #333;
+}
+
+header{
+    display: flex;
+    align-items: center; /*vertical align*/
+}
+
+header h1{
+    flex-grow: 1;/*fills space*/
+    text-align: center;/*horizontal align*/
 }
