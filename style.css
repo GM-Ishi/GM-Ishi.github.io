@@ -1,6 +1,7 @@
 /*Styles for home page*/
 *{
     box-sizing: border-box;
+    background-color:blueviolet;
 }
 
 h1,h1{
@@ -8,6 +9,7 @@ h1,h1{
 }
 
 header,section{
+    background-color:aqua;
     height:90vh;
     width:60vh;
     float: left;
