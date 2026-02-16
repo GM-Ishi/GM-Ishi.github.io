@@ -24,7 +24,7 @@ h1{
 header,section{
     background-color: aqua;
     height:90vh;
-    width:60vh;
+    width:100%;
     border-radius: 0.33rem; 
     float: left;
     margin: 1rem;
