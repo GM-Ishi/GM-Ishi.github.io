@@ -6,12 +6,18 @@
     box-sizing: border-box;
 }
 
+.wrapper{
+    container-type:inline-size;
+}
+
+.wrapper h1{
+    font-size:10cqw;
+}
 
 body{
     background-color: blueviolet;
     font-family: "Quantico", sans-serif;
     font-weight: 400;/*normal*/
-    font-size: auto;
     overflow-wrap:break-word;
 }
 
@@ -19,10 +25,10 @@ h1,h2{
     text-transform: uppercase;
 }
 
-h1{
+/*h1{
     font-size: 5rem;
     line-height: 0.9em;
-}
+}*/
 
 header,section{
     background-color: aqua;
