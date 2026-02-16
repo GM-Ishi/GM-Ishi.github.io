@@ -1,14 +1,23 @@
 /*Styles for home page*/
+
+@import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 *{
     box-sizing: border-box;
 }
 
 body{
     background-color: blueviolet;
+    font-family: "Quantico", sans-serif;
+    font-weight: 400;/*normal*/
 }
 
-h1,h1{
+h1,h2{
     text-transform: uppercase;
+}
+
+h1{
+    font-size: 5rem;
 }
 
 header,section{
