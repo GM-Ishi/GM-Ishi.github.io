@@ -12,37 +12,32 @@ body{
     background-color: blueviolet;
     font-family: "Quantico", sans-serif;
     padding: 20px;
-    line-height:1.4px;
+    line-height:1.6px;
 }
-
-h1,h2{
-    text-transform: uppercase;
-    text-align: center;/*horizontal align*/
-}
-
-/*h1{
-    font-size: 5rem;
-    line-height: 0.9em;
-}*/
 
 header{
     background-color: aqua;
-    border-radius: 0.33rem; 
-    margin: 1rem;
-    padding: 3rem;
+    margin-bottom: 30px;
+    padding: 20px;
     box-shadow: 0px 5px 10px #333;
 }
 
-h2{
-    font-size: 1rem;
-    margin-bottom:10px;
+header h1{
+    font-size: 4rem;
+    text-transform: uppercase;
 }
 
-section{/*conflict?*/
+section{
     background-color:bisque;
     padding:20px;
     margin-bottom:20px;
     box-shadow: 0px 5px 10px #333;
+}
+
+h2{
+    font-size: 2rem;
+    margin-bottom:10px;
+    text-transform: uppercase;
 }
 
 ol {
@@ -58,11 +53,11 @@ a:hover {
     text-decoration: underline;
 }
 
-#coolPic img {
+img {
     max-width: 100%;
     height: auto;
-    margin-top:10px;
-    border-radius: 3px;
+    border-radius: 8px;
+    margin-top: 10px;
 }
 
 main {/*stop overflow?*/
