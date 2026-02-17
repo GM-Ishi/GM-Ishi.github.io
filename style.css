@@ -17,7 +17,6 @@ body{
     font-family: "Quantico", sans-serif;
     font-weight: 400;/*normal*/
     overflow-wrap:break-word;
-    flex: 1 1 100%
 }
 
 h1,h2{
@@ -53,7 +52,10 @@ header h1{
 section{
     background-color:bisque;
 }
-
+#randomQuestion {
+    flex: 1 1 100%;
+    display: flex;
+}
 #coolPic img {
     width: 100%;
     height: 100%;
