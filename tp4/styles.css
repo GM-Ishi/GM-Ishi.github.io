@@ -19,4 +19,10 @@
 .gameSpace{
     position:relative;
     background-color: white;
+    font-size: 10rem;
+    text-transform: uppercase;
+    text-align:center;
+    display:flex;
+    align-items: center;
+    justify-content: center;;
 }
