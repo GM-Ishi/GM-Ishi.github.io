@@ -79,7 +79,21 @@ body {
     background-color:gray;
 }
 
+.pair5 .cardBottom{
+    background-color:orange;
+}
 
+.pair6 .cardBottom{
+    background-color:aquamarine;
+}
+
+.pair7 .cardBottom{
+    background-color:violet;
+}
+
+.pair8 .cardBottom{
+    background-color:pink;
+}
 
 /***gameBoard formatting***/
 
@@ -87,7 +101,7 @@ body {
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: var(--boardGap);
     width: var(--boardWidth);
 }
@@ -101,7 +115,7 @@ body {
 
   #gameBoard {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     margin: 0 auto;
   }
 
