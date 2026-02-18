@@ -8,7 +8,14 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
 }
 
 :root {
-  --cardSize: 40vw; /* variable for card dimensions */
+  --boardWidth: 100vw; /* variable for overall board dimensions */
+  --boardGap: 1vw;
+  --cardSize: calc( ( var(--boardWidth) - var(--boardGap) ) / 2); /* calculated variable for mobile card dimensions */
+}
+
+body {
+  margin: var(--boardGap) 0 0 0;
+  padding: 0;
 }
 
 /***General Card Styling***/
@@ -18,7 +25,6 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
   width: var(--cardSize);
   height: var(--cardSize);
   perspective: 500px; /* special CSS property relevant to 3D flips */
-  margin-bottom: 1rem;
 }
 
 .cardContent {
@@ -77,22 +83,26 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
 
 /***gameBoard formatting***/
 
-#gameBoard{
-    position:relative;
-    display:grid;
+#gameBoard {
+    position: relative;
+    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap:1rem;
-    width: 100vw;
+    gap: var(--boardGap);
+    width: var(--boardWidth);
 }
 
-@media screen and(orientation:landscape){
-    :root{
-        --cardSize:20vw;
-    }
+@media screen and (orientation: landscape) {
 
-    #gameBoard{
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+  :root {
+    --boardWidth: 80vw; /* variable for overall board dimensions */
+    --cardSize: calc( ( var(--boardWidth) - (3 * var(--boardGap) ) ) / 4); /* calculated variable for landscape card dimensions */
+  }
+
+  #gameBoard {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    }
+    margin: 0 auto;
+  }
+
 }
