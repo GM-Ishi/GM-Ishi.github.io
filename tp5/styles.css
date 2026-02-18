@@ -8,8 +8,10 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
 }
 
 :root {
-  --cardSize: 200px; /* variable for card dimensions */
+  --cardSize: 250px; /* variable for card dimensions */
 }
+
+/***General Card Styling***/
 
 .card {
   position: relative;
@@ -53,6 +55,8 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
   transform: rotateY(180deg); /* pre-flip so it appears on parent's flip */
 }
 
+/***specific card styling***/
+
 .pair1 .cardBottom{
     background-color:red;
 }
@@ -67,4 +71,16 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
 
 .pair4 .cardBottom{
     background-color:gray;
+}
+
+
+
+/***gameBoard formatting***/
+
+#gameBoard{
+    position:relative;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap:1rem;
 }
