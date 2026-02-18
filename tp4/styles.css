@@ -1,4 +1,6 @@
 /*styles for the TP4: Tic-Tac-Toe Project*/
+@import url('https://fonts.googleapis.com/css2?family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
 :root{
     --gameBoardSize:80vh;
     --gameBoardSpacer:15px;
@@ -25,6 +27,6 @@
     display:flex;
     align-items: center;
     justify-content: center;
-    /*add font*/
+    font-family:"SN Pro";
     overflow: hidden;
 }
