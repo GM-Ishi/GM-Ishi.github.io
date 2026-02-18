@@ -3,6 +3,9 @@
 /*
 To achieve the flipping effect on a mouse-over (hover), we need to position and style the nest of DOM objects with a handful of special 3D-rotation CSS properties, a transform rotation applied on :hover, and transitions to make the rotations apply smoothly.
 */
+*{
+    box-sizing: border-box;
+}
 
 :root {
   --cardSize: 200px; /* variable for card dimensions */
@@ -13,6 +16,7 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
   width: var(--cardSize);
   height: var(--cardSize);
   perspective: 500px; /* special CSS property relevant to 3D flips */
+  margin-bottom: 1rem;
 }
 
 .cardContent {
@@ -47,4 +51,8 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
   background-color: #eee;
   color: darkblue;
   transform: rotateY(180deg); /* pre-flip so it appears on parent's flip */
+}
+
+.pair1 .cardBottom{
+    background-color:red;
 }
