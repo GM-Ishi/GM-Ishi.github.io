@@ -56,3 +56,15 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
 .pair1 .cardBottom{
     background-color:red;
 }
+
+.pair2 .cardBottom{
+    background-color:green;
+}
+
+.pair3 .cardBottom{
+    background-color:yellow;
+}
+
+.pair4 .cardBottom{
+    background-color:gray;
+}
