@@ -7,7 +7,7 @@
 }
 
 #gameBoard{
-    position:relative;
+    position:relative;/*creates black base for grid*/
     width: var(--gameBoardSize);
     height: var(--gameBoardSize);
     background-color:black;
@@ -19,14 +19,14 @@
 }
 
 .gameSpace{
-    position:relative;
+    position:relative;/*creates white spaces to make grid*/
     background-color: white;
+    font-family:"SN Pro";
     font-size: 10rem;
     text-transform: uppercase;
     text-align:center;
     display:flex;
     align-items: center;
     justify-content: center;
-    font-family:"SN Pro";
     overflow: hidden;
 }
