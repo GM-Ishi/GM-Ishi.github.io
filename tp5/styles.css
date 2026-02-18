@@ -3,14 +3,16 @@
 /*
 To achieve the flipping effect on a mouse-over (hover), we need to position and style the nest of DOM objects with a handful of special 3D-rotation CSS properties, a transform rotation applied on :hover, and transitions to make the rotations apply smoothly.
 */
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
 :root {
-  --boardWidth: 100vw; /* variable for overall board dimensions */
+  --boardWidth: 100vw;
+  /* variable for overall board dimensions */
   --boardGap: 1vw;
-  --cardSize: calc( ( var(--boardWidth) - var(--boardGap) ) / 2); /* calculated variable for mobile card dimensions */
+  --cardSize: calc((var(--boardWidth) - var(--boardGap)) / 2);
+  /* calculated variable for mobile card dimensions */
 }
 
 body {
@@ -24,30 +26,36 @@ body {
   position: relative;
   width: var(--cardSize);
   height: var(--cardSize);
-  perspective: 500px; /* special CSS property relevant to 3D flips */
+  perspective: 500px;
+  /* special CSS property relevant to 3D flips */
 }
 
 .cardContent {
-  position: absolute; /* positioning within the parent card object */
+  position: absolute;
+  /* positioning within the parent card object */
   width: 100%;
   height: 100%;
   transition: transform 0.5s;
-  transform-style: preserve-3d; /* special CSS property relevant to 3D flips */
+  transform-style: preserve-3d;
+  /* special CSS property relevant to 3D flips */
 }
 
 .card:hover .cardContent {
-  transform: rotateY(180deg); /* simulate a 3D flip */
+  transform: rotateY(180deg);
+  /* simulate a 3D flip */
 }
 
 .cardTop,
 .cardBottom {
-  position: absolute; /* positioning within the parent cardContent object */
+  position: absolute;
+  /* positioning within the parent cardContent object */
   text-align: center;
   height: 100%;
   width: 100%;
-  border: 2px solid darkblue;
+  border: 2px solid black;
   font-size: 42px;
-  backface-visibility: hidden; /* special CSS property relevant to 3D flips */
+  backface-visibility: hidden;
+  /* special CSS property relevant to 3D flips */
 }
 
 .cardTop {
@@ -58,59 +66,78 @@ body {
 .cardBottom {
   background-color: #eee;
   color: darkblue;
-  transform: rotateY(180deg); /* pre-flip so it appears on parent's flip */
+  transform: rotateY(180deg);
+  /* pre-flip so it appears on parent's flip */
 }
 
 /***specific card styling***/
 
-.pair1 .cardBottom{
-    background-color:red;
+.pair1 .cardBottom {
+  --s: 90px;
+  /* control the size*/
+  --c1: #fff220;
+  --c2: #e181c2;
+
+  --d: calc(var(--s)/10);
+  /* control the gap between stars */
+
+  --_g: var(--c1) 36deg, #0000 0;
+  background:
+    conic-gradient(from 162deg at calc(var(--s) * .5) calc(var(--s) * .68), var(--_g)),
+    conic-gradient(from 18deg at calc(var(--s) * .19) calc(var(--s) * .59), var(--_g)),
+    conic-gradient(from 306deg at calc(var(--s) * .81) calc(var(--s) * .59), var(--_g)),
+    var(--c2);
+  background-position: 0 calc(var(--s) * 0.35);
+  background-size: calc(var(--s) + var(--d)) calc(var(--s) + var(--d));
+  /*background-color:red;*/
 }
 
-.pair2 .cardBottom{
-    background-color:green;
+.pair2 .cardBottom {
+  background-color: green;
 }
 
-.pair3 .cardBottom{
-    background-color:yellow;
+.pair3 .cardBottom {
+  background-color: yellow;
 }
 
-.pair4 .cardBottom{
-    background-color:gray;
+.pair4 .cardBottom {
+  background-color: gray;
 }
 
-.pair5 .cardBottom{
-    background-color:orange;
+.pair5 .cardBottom {
+  background-color: orange;
 }
 
-.pair6 .cardBottom{
-    background-color:aquamarine;
+.pair6 .cardBottom {
+  background-color: aquamarine;
 }
 
-.pair7 .cardBottom{
-    background-color:violet;
+.pair7 .cardBottom {
+  background-color: violet;
 }
 
-.pair8 .cardBottom{
-    background-color:pink;
+.pair8 .cardBottom {
+  background-color: pink;
 }
 
 /***gameBoard formatting***/
 
 #gameBoard {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: var(--boardGap);
-    width: var(--boardWidth);
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: var(--boardGap);
+  width: var(--boardWidth);
 }
 
 @media screen and (orientation: landscape) {
 
   :root {
-    --boardWidth: 80vw; /* variable for overall board dimensions */
-    --cardSize: calc( ( var(--boardWidth) - (3 * var(--boardGap) ) ) / 4); /* calculated variable for landscape card dimensions */
+    --boardWidth: 80vw;
+    /* variable for overall board dimensions */
+    --cardSize: calc((var(--boardWidth) - (3 * var(--boardGap))) / 4);
+    /* calculated variable for landscape card dimensions */
   }
 
   #gameBoard {
