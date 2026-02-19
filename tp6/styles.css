@@ -56,6 +56,11 @@ main {
     font-size: 2rem;
 }
 
+#currentLocation{
+    position: center;
+    font-size: 10rem;
+}
+
 
 /**************************************** current humidity */
 
