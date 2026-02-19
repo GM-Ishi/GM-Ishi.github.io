@@ -58,8 +58,8 @@ main {
 
 #currentLocation{
     position: absolute;
-    left:40rem;
-    bottom:50rem;
+    left:10rem;
+    bottom:20rem;
     font-size: 10rem;
 }
 
@@ -83,7 +83,7 @@ main {
     grid-area: currentWind;
     background-color: lightgray;
     border-bottom: 1px solid white;
-    font-size: 2rem;
+    font-size: 4rem;
 }
 
 
@@ -97,6 +97,7 @@ main {
     overflow-y: hidden;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    font-size:4rem;
 }
 
 #futureInfo::-webkit-scrollbar {
