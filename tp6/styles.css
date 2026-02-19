@@ -58,8 +58,8 @@ main {
 
 #currentLocation{
     position: absolute;
-    left:auto;
-    bottom:auto;
+    left:40rem;
+    bottom:50rem;
     font-size: 10rem;
 }
 
@@ -72,6 +72,7 @@ main {
     background-color: lightblue;
     border-bottom: 1px solid white;
     border-right: 1px solid white;
+    font-size: 4rem;
 }
 
 
@@ -82,6 +83,7 @@ main {
     grid-area: currentWind;
     background-color: lightgray;
     border-bottom: 1px solid white;
+    font-size: 2rem;
 }
 
 
