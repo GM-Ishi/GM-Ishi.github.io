@@ -46,7 +46,7 @@ main {
 #currentTemp {
     position: absolute;
     font-size: 5rem;
-    left: 1rem;
+    left: 10rem;
 }
 
 #currentStatus {
@@ -58,8 +58,8 @@ main {
 
 #currentLocation{
     position: absolute;
-    left:10rem;
-    bottom:20rem;
+    left:5rem;
+    bottom:10rem;
     font-size: 10rem;
 }
 
