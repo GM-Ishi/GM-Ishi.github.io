@@ -57,7 +57,9 @@ main {
 }
 
 #currentLocation{
-    position: center;
+    position: absolute;
+    left:auto;
+    bottom:auto;
     font-size: 10rem;
 }
 
