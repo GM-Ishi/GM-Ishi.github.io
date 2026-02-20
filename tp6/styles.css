@@ -47,15 +47,17 @@ main {
 
 #currentLocation{
     position: absolute;
-    font-size: 4rem;
+    font-size:1rem;
+    font-size: 10vw;/*4rem*/
     left: 50%;
-    top: 20%;
-    transform:translate(-50%,-30%);
+    top: 50%;
+    transform:translate(-50%,-170%);
 }
 
 #currentTemp {
     position: absolute;
     font-size: 8rem;
+    font-size: 15vw;
     left: 50%;
     top: 50%;
     transform:translate(-50%,-50%);
@@ -64,9 +66,10 @@ main {
 #currentStatus {
     position: absolute;
     font-size: 5rem;
+    font-size: 10vw;
     left: 50%;
-    bottom: 10%;
-    transform:translate(-50%,-30%);
+    top: 50%;
+    transform:translate(-50%,70%);
 }
 
 
@@ -78,7 +81,7 @@ main {
     background-color: aquamarine;
     border-bottom: 1px solid white;
     border-right: 1px solid white;
-    font-size: 4rem;
+    font-size: 10vw;/*4rem*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,7 +95,7 @@ main {
     grid-area: currentWind;
     background-color: lightgray;
     border-bottom: 1px solid white;
-    font-size: 4rem;
+    font-size: 10vw;/*4rem*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,7 +112,7 @@ main {
     overflow-y: hidden;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    font-size:2rem;
+    font-size:5vw;/*2rem*/
 }
 
 #futureInfo::-webkit-scrollbar {
@@ -123,7 +126,7 @@ main {
     /*border-right: 1px solid gray;*/
     left: 50%;
     top:50%;
-    transform:translate(-50%, -20%);
+    transform:translate(-50%, -30%);
 }
 
 .futureDay:nth-child(2) {
@@ -132,7 +135,7 @@ main {
 }
 
 .futureDay:nth-child(3) {
-    left: calc(var(--predictionBoxWidth) * 1.4);
+    left: calc(var(--predictionBoxWidth) * 1.35);
     border-right: none;
 }
 
