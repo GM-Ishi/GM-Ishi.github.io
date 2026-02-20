@@ -42,7 +42,7 @@ main {
     position: relative;
     grid-area: currentInfo;/*gives section an ID to place in grid area*/
     background-color: grey;
-    border-bottom: 1px solid white;
+    border-bottom: 3px solid white;
 }
 
 #currentLocation{
@@ -70,7 +70,7 @@ main {
     left: 50%;
     top: 50%;
     transform:translate(-50%,70%);
-}
+}/*add hover glow/highlight feature for each section*/
 
 
 /**************************************** current humidity */
@@ -79,8 +79,8 @@ main {
     position: relative;
     grid-area: currentHum;
     background-color: aquamarine;
-    border-bottom: 1px solid white;
-    border-right: 1px solid white;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
     font-size: 10vw;/*4rem*/
     display: flex;
     justify-content: center;
@@ -94,7 +94,7 @@ main {
     position: relative;
     grid-area: currentWind;
     background-color: lightgray;
-    border-bottom: 1px solid white;
+    border-bottom: 3px solid white;
     font-size: 10vw;/*4rem*/
     display: flex;
     justify-content: center;
@@ -126,7 +126,7 @@ main {
     /*border-right: 1px solid gray;*/
     left: 50%;
     top:50%;
-    transform:translate(-50%, -30%);
+    transform:translate(-50%, -35%);
 }
 
 .futureDay:nth-child(2) {
@@ -137,6 +137,12 @@ main {
 .futureDay:nth-child(3) {
     left: calc(var(--predictionBoxWidth) * 1.35);
     border-right: none;
+}
+
+/*hover glow detail*/
+#currentInfo:hover,#currentHumidity:hover,#currentWind:hover,#futureInfo:hover{
+  outline: blue dotted 2px;
+  transform: translateY(-5px);
 }
 
 
