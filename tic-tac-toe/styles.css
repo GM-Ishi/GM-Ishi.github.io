@@ -1,0 +1,32 @@
+/*styles for the Tic-Tac-Toe Project*/
+@import url('https://fonts.googleapis.com/css2?family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+:root{
+    --gameBoardSize:80vh;
+    --gameBoardSpacer:15px;
+}
+
+#gameBoard{
+    position:relative;/*creates black base for grid*/
+    width: var(--gameBoardSize);
+    height: var(--gameBoardSize);
+    background-color:black;
+
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: var(--gameBoardSpacer);
+}
+
+.gameSpace{
+    position:relative;/*creates white spaces to make grid*/
+    background-color: white;
+    font-family:"SN Pro";
+    font-size: 10rem;
+    text-transform: uppercase;
+    text-align:center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
