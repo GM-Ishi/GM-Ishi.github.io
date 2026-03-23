@@ -4,6 +4,7 @@ let rowA = [ "-", "-", "-" ];
 let rowB = [ "-", "-", "-" ];
 let rowC = [ "-", "-", "-" ];
 
+
 // track whose turn it is
 let currentTurn = "x";
 
@@ -61,34 +62,14 @@ function checkGameboard(checkA, checkB, checkC) {
      }
   }
   
-  return resultValue;
+  return resultValue; //returns final value
 }
-   /*   that checks the 3 arrays of board data (a, b, and c) and returns
-   *   and returns "x" if X has won; "o" if O has won, or 
-   *   "d" if the game is a draw. */
 
-
-// get a handle on the DOM element to be updated with the outcome
-/*let gameOutputMsg = document.querySelector("#gameResult span");
-
-
-// call your function checkGameboard() with the 3 rows
-let winState = checkGameboard(rowA, rowB, rowC);
-
-// test the returned value of the function
-if (winState == "x") { 
-  gameOutputMsg.innerHTML = "X wins";
-  
-} else if (winState == "o") {
-  gameOutputMsg.innerHTML = "O wins";
-  
-} else if (winState == "d") {
-  gameOutputMsg.innerHTML = "draw";
-  
-} else {
-  gameOutputMsg.innerHTML = "unknown";
-}*/
-
+if (currentTurn === "x") {
+  currentTurnElement.style.color = "blue";
+} else if (currentTurn === "o") {
+  currentTurnElement.style.color = "red";
+}
 
 // function to handle clicks
 function clickSquare() {
