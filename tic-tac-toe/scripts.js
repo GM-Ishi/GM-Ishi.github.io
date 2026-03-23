@@ -65,11 +65,11 @@ function checkGameboard(checkA, checkB, checkC) {
   return resultValue; //returns final value
 }
 
-if (currentTurn === "x") {
+/*if (currentTurn === "x") {
   currentTurnElement.style.color = "blue";
 } else if (currentTurn === "o") {
   currentTurnElement.style.color = "red";
-}
+}*/
 
 // function to handle clicks
 function clickSquare() {
@@ -85,11 +85,6 @@ function clickSquare() {
         remainingTurns = remainingTurns - 1; // or remainingTurns--
         console.log("Remaining turns: " + remainingTurns);
 
-        if (currentTurn === "x") {
-          currentTurnElement.style.color = "blue";
-        } else if (currentTurn === "o") {
-          currentTurnElement.style.color = "red";
-        }
 
         // update the array of rows with the player value
         if (this.id == "a1") rowA[0] = currentTurn;
