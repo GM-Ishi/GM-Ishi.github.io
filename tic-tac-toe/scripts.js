@@ -69,7 +69,7 @@ function checkGameboard(checkA, checkB, checkC) {
 
 
 // get a handle on the DOM element to be updated with the outcome
-let gameOutputMsg = document.querySelector("#gameResult span");
+/*let gameOutputMsg = document.querySelector("#gameResult span");
 
 
 // call your function checkGameboard() with the 3 rows
@@ -87,7 +87,7 @@ if (winState == "x") {
   
 } else {
   gameOutputMsg.innerHTML = "unknown";
-}
+}*/
 
 
 // function to handle clicks
