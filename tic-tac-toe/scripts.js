@@ -4,7 +4,17 @@ let rowA = [ "-", "-", "-" ];
 let rowB = [ "-", "-", "-" ];
 let rowC = [ "-", "-", "-" ];
 
+// track whose turn it is
+let currentTurn = "x";
 
+// track number of turns left
+let remainingTurns = 9;
+
+// track if game is over
+let gameOver = false;
+
+// set up blank variable for current player DOM element
+let currentPlayer;
    
 function checkGameboard(checkA, checkB, checkC) {
   let resultValue = "d";
@@ -55,21 +65,7 @@ function checkGameboard(checkA, checkB, checkC) {
 }
    /*   that checks the 3 arrays of board data (a, b, and c) and returns
    *   and returns "x" if X has won; "o" if O has won, or 
-   *   "d" if the game is a draw.
-   *
-   *   You should be able to change the input data (the 3 arrays)
-   *   and your function will still determine the correct winner
-   *
-   ********************************* */
-
-
-
-
-
-
-// **********************************************
-// ***** DO NOT EDIT THE CODE BELOW THIS LINE
-// **********************************************
+   *   "d" if the game is a draw. */
 
 
 // get a handle on the DOM element to be updated with the outcome
@@ -93,3 +89,90 @@ if (winState == "x") {
   gameOutputMsg.innerHTML = "unknown";
 }
 
+
+// function to handle clicks
+function clickSquare() {
+
+    // only proceed if space is empty
+    if ( (this.innerHTML == "") && (!gameOver) ) {
+
+        // set space
+        this.innerHTML = currentTurn;
+        this.classList.add("clicked");
+
+        // subtract 1 from remaining turns
+        remainingTurns = remainingTurns - 1; // or remainingTurns--
+        console.log("Remaining turns: " + remainingTurns);
+
+        // update the array of rows with the player value
+        if (this.id == "a1") rowA[0] = currentTurn;
+        if (this.id == "a2") rowA[1] = currentTurn;
+        if (this.id == "a3") rowA[2] = currentTurn;
+        if (this.id == "b1") rowB[0] = currentTurn;
+        if (this.id == "b2") rowB[1] = currentTurn;
+        if (this.id == "b3") rowB[2] = currentTurn;
+        if (this.id == "c1") rowC[0] = currentTurn;
+        if (this.id == "c2") rowC[1] = currentTurn;
+        if (this.id == "c3") rowC[2] = currentTurn;
+
+        // output arrays to console
+        console.log("Rows:");
+        console.log(rowA);
+        console.log(rowB);
+        console.log(rowC);
+
+
+        // get a handle on the DOM element to be updated with the outcome
+        let gameOutputMsg = document.querySelector("#gameResult");
+
+        // call your function checkGameboard() with the 3 rows
+        let winState = checkGameboard(rowA, rowB, rowC);
+
+        // test the returned value of the function
+        if (winState == "x") {
+            gameOutputMsg.innerHTML = "X wins";
+            gameOver = true;
+
+        } else if (winState == "o") {
+            gameOutputMsg.innerHTML = "O wins";
+            gameOver = true;
+
+        } else if ( (winState == "d") && (remainingTurns == 0) ) {
+            gameOutputMsg.innerHTML = "draw";
+            gameOver = true;
+
+        }
+
+        // reveal game outcome if game is over
+        if (gameOver) {
+            document.querySelector("#gameResult").style.display = "block";
+        }
+
+        // flip turn back and forth
+        if (currentTurn == "x") currentTurn = "o";
+        else currentTurn = "x";
+
+        // update next player DOM element
+        currentPlayer.innerHTML = currentTurn;
+
+    }
+
+}
+
+
+// wait for the document to load before adding clickable events
+document.addEventListener("DOMContentLoaded", function () {
+
+    // find all the clickable spaces
+    let allSpaces = document.querySelectorAll(".gameSpace");
+
+    // loop with "for-of" through all the clickable spaces
+    for (let eachSpace of allSpaces) {
+        eachSpace.addEventListener("click", clickSquare);
+    }
+
+    // update current player DOM element with first player
+    currentPlayer = document.querySelector("#currentPlayer span");
+    currentPlayer.innerHTML = currentTurn;
+
+});
