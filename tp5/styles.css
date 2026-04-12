@@ -8,11 +8,10 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
 }
 
 :root {
-  --boardWidth: 100vw;
-  /* variable for overall board dimensions */
+  --boardWidth: 100vw; /* variable for overall board dimensions */
   --boardGap: 1vw;
-  --cardSize: calc((var(--boardWidth) - var(--boardGap)) / 2);
-  /* calculated variable for mobile card dimensions */
+  --cardSize: calc((var(--boardWidth) - var(--boardGap)) / 2); /* calculated variable for mobile card dimensions */
+  --timeDelay: 1s;
 }
 
 body {
@@ -26,60 +25,58 @@ body {
   position: relative;
   width: var(--cardSize);
   height: var(--cardSize);
-  perspective: 500px;
-  /* special CSS property relevant to 3D flips */
+  perspective: 500px; /* special CSS property relevant to 3D flips */
+  transition: opacity 1s;
 }
 
 .cardContent {
-  position: absolute;
-  /* positioning within the parent card object */
+  position: absolute;/* positioning within the parent card object */
   width: 100%;
   height: 100%;
   transition: transform 0.5s;
-  transform-style: preserve-3d;
-  /* special CSS property relevant to 3D flips */
+  transform-style: preserve-3d;/* special CSS property relevant to 3D flips */
 }
 
-.card:hover .cardContent {
-  transform: rotateY(180deg);
-  /* simulate a 3D flip */
+.card.clicked .cardContent {
+  transform: rotateY(180deg); /* simulate a 3D flip */
 }
 
 .cardTop,
 .cardBottom {
-  position: absolute;
-  /* positioning within the parent cardContent object */
+  position: absolute; /* positioning within the parent cardContent object */
   text-align: center;
   height: 100%;
   width: 100%;
-  border: 2px solid black;
+  border: 5px solid black;
   font-size: 42px;
-  backface-visibility: hidden;
-  /* special CSS property relevant to 3D flips */
+  backface-visibility: hidden; /* special CSS property relevant to 3D flips */
 }
 
 .cardTop {
-  background-color: darkblue;
+  background-color: #50c878;
   color: #eee;
 }
 
 .cardBottom {
   background-color: #eee;
-  color: darkblue;
-  transform: rotateY(180deg);
-  /* pre-flip so it appears on parent's flip */
+  color: #50c878;
+  transform: rotateY(180deg); /* pre-flip so it appears on parent's flip */
+}
+
+.matched {
+    opacity: 0;
+    transition-delay: var(--timeDelay);
 }
 
 /***specific card styling***/
+/* patterns added using CSS from https://css-pattern.com/ */
 
 .pair1 .cardBottom {
-  --s: 90px;
-  /* control the size*/
+  --s: 90px; /* control the size*/
   --c1: #fff220;
   --c2: #e181c2;
 
-  --d: calc(var(--s)/10);
-  /* control the gap between stars */
+  --d: calc(var(--s)/10); /* control the gap between stars */
 
   --_g: var(--c1) 36deg, #0000 0;
   background:
@@ -92,8 +89,7 @@ body {
 }
 
 .pair2 .cardBottom {
-  --s: 120px;
-  /* control the size*/
+  --s: 120px; /* control the size*/
   --c1: #e7525b;
   --c2: #78dbf0;
 
@@ -106,8 +102,7 @@ body {
 }
 
 .pair3 .cardBottom {
-  --s: 125px;
-  /* control the size*/
+  --s: 125px; /* control the size*/
   --c1: #f8ca00;
   --c2: #bd1550;
 
@@ -121,8 +116,7 @@ body {
 }
 
 .pair4 .cardBottom {
-  --s: 106px;
-  /* control the size*/
+  --s: 106px; /* control the size*/
   --c1: #eafde6;
   --c2: #519548;
 
@@ -136,8 +130,7 @@ body {
 }
 
 .pair5 .cardBottom {
-  --s: 60px;
-  /* control the size*/
+  --s: 60px; /* control the size*/
   --c1: #62ad3a;
   --c2: #722f30;
 
@@ -151,8 +144,7 @@ body {
 }
 
 .pair6 .cardBottom {
-  --s: 60px;
-  /* control the size*/
+  --s: 60px; /* control the size*/
   --c1: #ffdc56;
   --c2: #fe6601;
   --c3: #803201;
@@ -168,8 +160,7 @@ body {
 }
 
 .pair7 .cardBottom {
-  --s: 100px;
-  /* control the size*/
+  --s: 100px; /* control the size*/
   --c1: #fcd036;
   --c2: #987f69;
 
@@ -184,8 +175,7 @@ body {
 }
 
 .pair8 .cardBottom {
-  --s: 76px;
-  /* control the size*/
+  --s: 76px; /* control the size*/
   --c1: #1a144a;
   --c2: #2eb044;
 
@@ -221,6 +211,14 @@ body {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     margin: 0 auto;
+  }
+
+  #winning{
+    text-align:center;
+    background-color: black;
+    color: Green;
+    size: 50%;
+    
   }
 
 }
