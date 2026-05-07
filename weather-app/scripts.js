@@ -1,11 +1,11 @@
 /* javascript to enable drag-scrolling */
 
 // weather API global variables
-const weatherUrl = 'https://weatherapi-com.p.rapidapi.com/forecast.json?days=3&q=';
+const weatherUrl = 'https://weatherapi-com.p.rapidapi.com/alerts.json?q=New%20York';
 const weatherOptions = {
 	method: 'GET',
 	headers: {
-		'x-rapidapi-key': 'b1191f052bmsh9393381bd6d8022p103498jsna1764183a67a',
+		'x-rapidapi-key': 'cb2171ec3dmshd0563f7e90b6657p1d9ccejsnfa5fb3ff7d02',
 		'x-rapidapi-host': 'weatherapi-com.p.rapidapi.com',
 		'Content-Type': 'application/json'
 	}
