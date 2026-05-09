@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- meta tags and title -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Major-Project</title>
+
+    <!-- external and internal CSS -->
+    <link rel="stylesheet" href="styles.css" media="all">
+
+    <!-- external and internal JavaScript -->
+    <script src="scripts.js" defer></script>
+
+</head>
+
+<body>
+    <div id="top">
+    <h1>Entertainment Finder</h1>
+    </div>
+  
+    <div class="container mt-3">
+      <div class="row movies">
+   <!-- Movies will be loaded into this space -->
+      </div>
+    </div>
+
+
+    <div id="modalCover"></div>
+    <div id="modalForm">
+        <form id="locationForm">
+            <input type="text" id="locationBox">
+            <button type="Submit">Enter</button>
+        </form>
+    </div>
+
+    <button id="findLocation">Search</button>
+
+    <main>
+        <div id="currentInfo">
+            <div id="currentTemp"><span></span>Trending</div>
+            <div id="currentStatus"></div>
+        </div>
+
+        <div id="currentHumidity"><span></span>Today</div>
+
+        <div id="currentWind"></div>
+
+        <div id="futureInfo">
+            <div class="futureDay">
+                <div class="futureTemp"><span></span>This Week</div>
+                <div class="futureWind"></div>
+                <div class="futureStatus"></div>
+            </div>
+            <div class="futureDay">
+                <div class="futureTemp"><span></span>This Month</div>
+                <div class="futureWind"></div>
+                <div class="futureStatus"></div>
+            </div>
+            <div class="futureDay">
+                <div class="futureTemp"><span></span>°F</div>
+                <div class="futureWind"></div>
+                <div class="futureStatus"></div>
+            </div>
+        </div>
+    </main>
+
+
+</body>
+
+</html>

@@ -1,0 +1,185 @@
+/* styles for weather app 2.0 */
+
+
+/**************************************** general layout */
+
+:root {
+    --predictionBoxWidth: 70vw;
+    --predictionBoxHeight: 20vh;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#top{
+  font-size: 2rem;
+  text-align: center;
+  background-color: teal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+main {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: lightgrey;
+
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: 50vh 30vh var(--predictionBoxHeight);
+    grid-template-areas:
+        'currentInfo    currentInfo'
+        'currentHum     currentWind'
+        'future         future';
+}
+
+
+/**************************************** current info */
+
+#currentInfo {
+    position: relative;
+    grid-area: currentInfo;
+    background-color: orange;
+    border-bottom: 1px solid white;
+}
+
+#currentTemp {
+    position: absolute;
+    font-size: 5rem;
+    left: 1rem;
+}
+
+#currentStatus {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    font-size: 2rem;
+}
+
+
+/**************************************** current humidity */
+
+#currentHumidity {
+    position: relative;
+    grid-area: currentHum;
+    background-color: lightgreen;
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+}
+
+
+/**************************************** current wind */
+
+#currentWind {
+    position: relative;
+    grid-area: currentWind;
+    background-color: magenta;
+    border-bottom: 1px solid white;
+}
+
+
+/**************************************** future prediction */
+
+#futureInfo {
+    position: relative;
+    grid-area: future;
+    background-color: salmon;
+    overflow: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#futureInfo::-webkit-scrollbar {
+    display: none;
+}
+
+.futureDay {
+    position: absolute;
+    width: var(--predictionBoxWidth);
+    height: var(--predictionBoxHeight);
+    border-right: 1px solid gray;
+}
+
+.futureDay:nth-child(2) {
+    left: var(--predictionBoxWidth);
+}
+
+.futureDay:nth-child(3) {
+    left: calc(var(--predictionBoxWidth) * 2);
+    border-right: none;
+}
+
+
+
+/**************************************** modal window stuff */
+
+/* blur and dim the background with a cover */
+#modalCover {
+	position: fixed;
+	display: none; /* hidden by default */
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(255,255,255,0.7);
+	backdrop-filter: blur(8px);
+	z-index: 1000;
+}
+
+#modalForm {
+    position: fixed;
+	display: none; /* hidden by default */
+	width: 80vw;
+	height: 60vh;
+	left: 10vw;
+	top: 20vh;
+	padding: 1em;
+	background-color: white;
+	border: 1px solid gray;
+	color: black;
+	z-index: 1001;
+}
+
+#findLocation {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 999;
+}
+
+body.showModal #modalCover,
+body.showModal #modalForm {
+    display: block;
+}
+
+
+/**************************************** future prediction */
+
+@media screen and (orientation: landscape) {
+
+    :root {
+        --predictionBoxWidth: 30vw;
+        --predictionBoxHeight: calc( 100vh / 3 );
+    }
+
+    main {
+        grid-template-columns: 60vw 40vw;
+        grid-template-rows: var(--predictionBoxHeight) var(--predictionBoxHeight) var(--predictionBoxHeight);
+        grid-template-areas:
+            'currentInfo    currentHum'
+            'currentInfo    currentWind'
+            'currentInfo    future';
+    }
+
+    #currentInfo {
+        border-bottom: none;
+        border-right: 1px solid white;
+    }
+}
